@@ -1,0 +1,43 @@
+@use './styles/utils.scss' as utils; // 모듈 이름을 utils로 설정
+
+.SassComponent {
+  display: flex;
+
+  .box {
+    background: red;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+
+    &.red {
+      background: utils.$red; // 변수를 모듈 이름을 통해 참조
+      @include utils.square(1); // 믹스인을 모듈 이름을 통해 참조
+    }
+    &.orange {
+      background: utils.$orange;
+      @include utils.square(2);
+    }
+    &.yellow {
+      background: utils.$yellow;
+      @include utils.square(3);
+    }
+    &.green {
+      background: utils.$green;
+      @include utils.square(4);
+    }
+    &.blue {
+      background: utils.$blue;
+      @include utils.square(5);
+    }
+    &.indigo {
+      background: utils.$indigo;
+      @include utils.square(6);
+    }
+    &.violet {
+      background: utils.$violet;
+      @include utils.square(7);
+    }
+    &:hover {
+      background: black;
+    }
+  }
+}
